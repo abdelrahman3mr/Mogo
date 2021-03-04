@@ -1,0 +1,722 @@
+@import 'partial/var';
+@import 'partial/placeholder';
+@import 'partial/base';
+// @import 'partial/function';
+@import 'partial/mixin';
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $Roboto, Arial ,sans-serif;
+    .navbar {
+        position: fixed;
+        width: 100%;
+        z-index: 10;
+    }
+
+    .header {
+        background: linear-gradient(to bottom,rgb(230 ,130 ,129),rgba(238, 214, 136, 0.75)),url(./Images/homebg.jpg) no-repeat 50% 50%;
+        background-size: $cover;
+       div {          
+            .car-ind {
+                width: 23%;
+            }
+           .title {
+                color: $white; 
+                @include font(72px, 400, $Kaushan-Script);
+           }
+           .header-text {
+                line-height: 140px;
+                color: $white;
+                @include font(150px, 700, $Montserrat);
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 60px;
+                    height: 3px;
+                   @include background-color($white);
+                    margin: 70px auto;
+                }
+           } 
+           .button-margin {
+            margin-bottom: 60px;
+            border: 3px solid $white;
+            }   
+           .ca-in{
+            margin: {
+                top: 100px;
+                right: 0;
+                left: 0;
+            }
+                .car-ind {
+                    width: 23%;
+                }
+            }
+            ul {
+                li {
+                    span {
+                        @include font(22px, bold, $Montserrat);
+                    }
+                    .active-slider {
+                        position: relative;
+                        &::before {
+                            content: "";
+                            top: -32px;
+                            left: 3px;
+                            width: 60px;
+                            height: 3px;
+                            @include background-color($Froly);
+                            position: absolute;
+                        }               
+                    }                       
+                }
+            }
+        }
+    }
+
+    .story {
+        header {
+            @extend %section-header;
+        }
+        p {
+            line-height: 24px;
+            color: $secondary-color;
+            font-weight: 400;
+        }
+        .story-img {  
+            figure {
+                .story-wrapper {
+                    @extend %overlay;
+                    i {
+                        color: $white;
+                        font-size: 20px;
+                    }
+                    p {
+                        color: $white;
+                    }
+                }     
+            }
+        }
+    }
+
+    .numbers {
+        @include background-color($base-color);
+        color: $white;
+        .num {
+            @include font(72px, 700, $Montserrat);          
+        }
+        .num-par {
+            @include font(14px, 400, $Montserrat);          
+        }
+    }  
+
+    .services {
+        header {
+            @extend %section-header;
+        }
+        div {
+            h3 { 
+                color: #333333;
+                margin-bottom: 10px;
+                @include font(14px, bold, $Montserrat);
+            }
+            p {
+                line-height: 24px;
+                @include font(15px, 400, $Roboto);
+            }
+            .icon-color {
+                @extend %icon-color;
+            }
+        }
+    }
+
+    .unique-design {
+        background: linear-gradient(to bottom,rgba(237, 237, 237, .8), rgba(237, 237, 237, .8)), url(./Images/divicebg.jpg) 41% 100%; 
+        padding-top: 100px;
+        header {
+            @extend %section-header;
+        }
+        div {
+            position: relative;
+            img:last-of-type {
+                position: absolute;
+                bottom: -90px;
+                right: 158px;
+            }
+        }
+    }
+
+    .services-do {
+        margin: 100px 0;
+        font-family: $Roboto;
+        header {
+            @extend %section-header;
+        }
+        p{
+            line-height: 24px;
+            color: $secondary-color;
+            font-weight: 400;     
+        }
+        div {
+            h2 {
+                .icon-color {
+                    @extend %icon-color;
+                    font-size: 28px;
+                }
+                .fa-angle-down {
+                    font-size: 30px;
+                    color: $secondary-color;
+                    
+                }
+            }
+        }
+    }
+
+    .comment-slider {
+        .row {
+            .comment-text {
+                h6 {
+                    @include font(21px, 300, $Roboto);
+                }
+                p {
+                    font-family: $Kaushan-Script;
+                    margin-top: 10px;
+                    font-size: 20px;
+                    color: $secondary-color;
+                    &:before {
+                        content: "";
+                        display: inline-block;
+                        width: 48px;
+                        height: 2px;
+                        @include background-color($Froly);
+                        margin: 0 6px 5px 0;
+                        
+                    }
+                }
+            }
+        }
+        a {
+            i {
+                color: $secondary-color;
+                font-size: 30px;
+            }
+        }
+    }
+
+    .teams {
+        header {
+            @extend %section-header;
+        }
+        p {
+            color: $secondary-color;
+        }
+        .teams-wrapper {
+            @extend %overlay;
+            .overlay {
+                i {
+                    font-size: 20px;
+                    padding: 15px 20px;
+                    @include background-color(#fce38a);
+                    color: #f38181;
+                    &:hover {
+                        @include background-color($Froly);
+                        color: $white;
+                    }
+                }
+            }
+        }
+        .teams-img {
+            .teams-name {
+                h5 {                 
+                   color: #333333;
+                    margin-top: 20px;
+                    @include font(14px, 600, $Montserrat);
+                }
+                p {
+                    line-height: 24px;
+                    color: $secondary-color;
+                    font-style: italic;                  
+                    @include font(16px, 300, $Roboto);
+                }
+            }
+        }
+    }
+
+    .work {
+        header {
+            @extend %section-header;
+        }
+        .work-text {
+            line-height: 24px;
+            color: $secondary-color;
+            font-weight: 400;
+            padding-bottom: 80px;  
+        }
+        div {
+            .work-wrapper {
+                display: flex;
+                position: relative;
+                 @extend %color-overlay;
+                 .overlay {
+                     text-align: center;
+                     color: $white;
+                     i {
+                         font-size: 30px;
+                         margin-bottom: 10px;
+                     }
+                     p {
+                         font-size: 12px;
+                     }
+                 }
+            }
+        }
+    }
+
+    .second-slider {
+        .slider-img {
+            width: 22%;
+            margin-right: 23px;
+        }
+        .slider-content {
+            h6 {
+                font-family: $Roboto;
+                margin-top: 10px;              
+            }
+            P {
+                font-family: $Kaushan-Script;
+                &:before {
+                    content: "";
+                    display: inline-block;
+                    width: 48px;
+                    height: 2px;
+                    @include background-color($Froly);
+                    margin: 0 6px 5px 0;
+                }    
+            }
+        }
+        a {
+            i {
+                font-size: 30px;
+                color: $secondary-color;
+            }
+        }
+    }
+
+    .testimonials {
+        padding: 120px 0 60px 0;
+        background: linear-gradient(to bottom,rgba(237, 237, 237, .9), rgba(237, 237, 237, .9)), url(./Images/clientbg.jpg) 55% 100%;
+        background-size: $cover;
+        header {
+            @extend %section-header;
+        }
+        div { 
+            
+            h5 {              
+                color: #333333;
+                margin-bottom: 15px;
+                @include font(14px, bold, $Montserrat);
+            }
+            h6:after {
+                content: "";
+                display: block;
+                width: 70px;
+                height: 3px;
+                @include background-color($Froly);
+                margin: 20px 0;
+            }
+            p {
+                color: $secondary-color;
+                @include font(16px, 400, $Roboto);
+            }     
+        }
+    }
+
+    .blogs {
+        margin: 85px 0 70px;
+        header {
+            @extend %section-header;
+        }
+        .blog-cards {
+            div {
+                .blog-img {
+                    position: relative;
+                    div {
+                        font-family: $Montserrat;
+                        @include background-color($base-color);
+                        position: absolute;
+                        left: -10px;
+                        bottom: 10px;
+                        h2{
+                            color: $white;
+                            font-weight: 700;   
+                        }
+                        p {
+                            color: $white;
+                        }
+                    }
+                }
+                .card-content {
+                    h5 {
+                        color: #333333;                      
+                        @include font(12px, bold, $Montserrat);
+                    }
+                    p {                      
+                        line-height: 24px;
+                        color: $secondary-color;                      
+                        border-bottom: 1px solid rgb(189, 185, 185);
+                        @include font(14px, 400, $Roboto);
+                    }
+                }
+                div {
+                    .fas {
+                        color: $base-color;
+                    }     
+                }
+            }
+        }
+    }
+
+    .map {
+        background: linear-gradient(to bottom,rgba(237, 237, 237, .8), rgba(237, 237, 237, .8)), url(./Images/mapbg.jpg);
+        background-size: $cover;
+        font-family: Montserrat;
+        i {
+            font-size: 2.5rem;
+            color: $Froly;
+        }
+        h2 {
+            color: $Froly;
+            &::after {
+                content: "";
+                display: block;
+                width: 60px;
+                height: 3px;
+                @include background-color($Froly);
+                margin:30px auto 40px;
+            }   
+        }
+    }
+
+    .footer {
+        .footer-text {
+          .footer-text {
+            color: $secondary-color;
+          }
+          .footer-followers {
+              border-bottom: 1px solid rgb(196, 191, 191);
+              span {
+                  font-weight: bold;
+              }
+          }
+          .footer-list {
+              .list-head {
+                color: $secondary-color;
+              }
+              li {
+                  i {
+                      color: $base-color;
+                  }
+              }
+          }
+          .footer-email {
+              input[type=email] {
+                border: 1px solid rgb(196, 190, 190);
+                padding: 5px;
+              }
+              div {
+                padding: 3px 20px;
+                @include background-color($base-color);
+                color: $white;
+                display: inline-block;
+                position: relative;
+                right: 10px;
+              }
+          }
+        }
+
+        .footer-blogs {
+            h5 {
+                margin: 10px 0 33px;
+            }
+            div {
+                margin-top: 30px;
+                div {
+                    margin-top: 16px;
+                    h6 {                      
+                        font: {
+                            size: 12px;
+                            weight: bold;
+                        }
+                    }
+                    p {
+                        color: $secondary-color;
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+
+        .footer-instagram {
+            div {
+                padding: 33px;
+                div {
+                    padding: 1px;
+                }
+                p {
+                    margin-top: 17px;
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 1024px) and (min-width: 992px) {
+    body {
+        .header {
+            div {
+                ul {
+                    padding: 0 140px;
+                    li {                      
+                        .active-slider {
+                            position: relative;
+                            &::before {                             
+                                top: -32px;                             
+                                width: 40px;                               
+                            }               
+                        }                       
+                    }
+                }  
+           }
+        }
+    }
+}
+
+
+@media screen and (max-width: 992px) and (min-width: 600px) {
+    body {
+        .header {
+            div {
+                .title {
+                    font-size: 35px;
+               }
+                .header-text {
+                    font-size: 75px;
+                    line-height: 70px;
+                    &::after {
+                        margin: 35px auto;
+                    }
+                }
+                .button-margin {
+                    margin-bottom: 30px;
+                }
+                ul {
+                    padding: 0 103px;
+                    li {                      
+                        .active-slider {
+                            position: relative;
+                            &::before {                             
+                                top: -32px;                             
+                                width: 40px;                               
+                            }               
+                        }                       
+                    }
+                }  
+            }
+        }
+        .numbers {
+            .num {
+                font-size: 35px;          
+                font-weight: 700;          
+            }
+            .num-par {
+                font-size: 7px;          
+                font-weight: 400;          
+            }
+        }
+        .teams {
+            .teams-wrapper {
+                .overlay {
+                    i {
+                        font-size: 10px;
+                        padding: 7px 10px;
+                    }
+                }
+           }
+        }      
+    }
+}
+
+
+@media screen and (max-width: 600px) and (min-width: 320px)  {
+    body {
+        .header {
+            div {
+                .header-text {
+                    font-size: 31px;
+                    line-height: 40px;
+                }
+                ul {
+                    
+                    li {
+                        font-size: 8px;
+                        span {
+                            font-size: 12px;
+                        } 
+                        .active-slider {
+                            &::before {
+                                top: -30px;
+                                left: 0px;
+                                width: 16px;                                
+                            }               
+                        }               
+                    }                      
+                }        
+            }           
+        }
+        .numbers {
+            .num {
+                @include font(57px, 700, $Montserrat);          
+            }
+            .num-par {
+                @include font(12px, 400, "Montserrat");          
+            }
+        }
+        .unique-design {
+            div {
+                position: relative;
+                img:last-of-type {
+                    position: absolute;
+                    bottom: -90px;
+                    right: 0;
+                    width: 60%;
+                }
+            }
+        } 
+        .services-do {  
+            p{
+                font-size: 12px;    
+            }
+  
+        }
+        .comment-slider {
+            .row {
+                .comment-text {
+                    h6 {
+                        @include font(16px, 300, $Roboto);//
+                    }
+                    p {                     
+                        font-size: 16px;                      
+                        &:before {                          
+                            width: 34px;                             
+                       }
+                    }
+                }
+            }
+        }
+        .work {
+            .work-text {
+                font-size: 14px;
+            }
+        }
+        .second-slider {
+            .slider-img {
+                width: 22%;
+                margin-right: 23px;
+            }
+            .slider-content {
+                h6 {
+                    font-size: 16px;        
+                }
+                P {
+                    font-family: $Kaushan-Script;
+                    &:before {
+                        width: 34px;
+                        font-size: 16px;     
+                    }    
+                }
+            }
+        }
+        .testimonials {
+            div {
+                h6:after {
+                    
+                    width: 40px;
+                   
+                }
+                p {
+                    font-size: 14px;
+                }
+            }
+        }
+        .footer {
+            .footer-text {
+                .footer-email {
+                    div {
+                      padding: 3px 20px;
+                      right: 60px;
+                      bottom: 0;
+                    }
+                }
+            }
+            .footer-instagram {
+                h5 {
+                    margin-top: 35px;
+                }
+            }    
+        }
+    }
+}
+
+// @media screen and (max-width: 600px) {
+//     body {
+//         .header {
+//             div {
+//                 .title {
+//                     @include font(25px, 400, "Kaushan Script");
+//                 }
+//                 .header-text {
+//                     font-size: 50px;
+//                     line-height: 40px;
+//                     &::after {
+                        
+            
+                       
+//                         margin: 25px auto;
+//                     }
+//                 }
+//                 .ca-in{
+//                     margin-top: 50px;
+//                     }
+//                 ul {
+//                     li {
+//                         font-size: 10px;
+//                         span {
+//                             font-size: 16px;
+//                         } 
+//                         .active-slider {
+//                             &::before {
+//                                 top: -31px;
+//                                 left: 0;
+//                                 width: 27px;        
+//                             }               
+//                         }               
+//                     }                      
+//                 }        
+//             }           
+//         }
+//         .numbers {
+//             @include background-color(#95e1d3);
+//             color: #ffffff;
+//             .num {
+//                 @include font(53px, 700, "Montserrat");          
+//             }
+//         }
+//     }
+// }
+
